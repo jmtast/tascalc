@@ -8,7 +8,7 @@
         <Label Content="Simple Calculator" Height="28" Margin="202,12,0,272" Name="label1" />
         <TextBox x:Name="numberB" Height="23" HorizontalAlignment="Left" Margin="218,72,0,0" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged_1" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="364,72,0,0" Name="textBlock1" Text="Result:" VerticalAlignment="Top" />
-        <TextBlock x:Name="resultBlock" Height="23" HorizontalAlignment="Left" Margin="429,72,0,0" Text="" VerticalAlignment="Top" />
+        <TextBlock x:Name="resultBlock" Height="63" HorizontalAlignment="Left" Margin="429,72,0,0" Text="" VerticalAlignment="Top" />
         <ComboBox Height="23" HorizontalAlignment="Left" Margin="155,112,0,0" Name="comboBox1" VerticalAlignment="Top" Width="55" SelectionChanged="comboBox1_SelectionChanged" />
     </Grid>
 </Window>

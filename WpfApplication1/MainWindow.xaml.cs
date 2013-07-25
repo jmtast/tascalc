@@ -27,6 +27,7 @@ namespace WpfApplication1
         private void sum_Click(object sender, RoutedEventArgs e)
         {
             int a, b;
+            bool emptyFields = false;
             if (numberA.Text != "")
             {
                 a = Convert.ToInt32(numberA.Text);    
@@ -34,6 +35,7 @@ namespace WpfApplication1
             else
             {
                 a = 0;
+                emptyFields = true;
             }
             
             if (numberB.Text != "")
@@ -43,9 +45,18 @@ namespace WpfApplication1
             else
             {
                 b = 0;
+                emptyFields = true;
             }
-            int result = a + b;
-            resultBlock.Text = Convert.ToString(result);
+            if (emptyFields)
+            {
+                resultBlock.Text = string.Format("Invalid{0}parameters", Environment.NewLine);
+            }
+            else
+            {
+                int result = a + b;
+                resultBlock.Text = Convert.ToString(result);                
+            }
+
         }
 
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
