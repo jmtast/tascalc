@@ -22,9 +22,12 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
+            operations.Items.Add("+");
+            operations.Items.Add("-");
+            operations.SelectedItem = operations.Items[0];
         }
 
-        private void sum_Click(object sender, RoutedEventArgs e)
+        private void operation_Click(object sender, RoutedEventArgs e, String operation)
         {
             int a, b;
             bool emptyFields = false;
@@ -49,12 +52,23 @@ namespace WpfApplication1
             }
             if (emptyFields)
             {
-                resultBlock.Text = string.Format("Invalid{0}parameters", Environment.NewLine);
+                invalidParameters();
             }
             else
             {
-                int result = a + b;
-                resultBlock.Text = Convert.ToString(result);                
+                int result = 0;
+                if (operation.Equals("+"))
+                {
+                    result = a + b;                    
+                }
+                else
+                {
+                    if (operation.Equals("-"))
+                    {
+                        result = a - b;
+                    }
+                }
+                resultBlock.Text = Convert.ToString(result);
             }
 
         }
@@ -69,9 +83,20 @@ namespace WpfApplication1
 
         }
 
-        private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void operations_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
+        }
 
+        private void doit_Click(object sender, RoutedEventArgs e)
+        {
+            String operation = (String)operations.SelectedItem;
+            operation_Click(this, null, operation);
+        }
+
+        private void invalidParameters()
+        {
+            resultBlock.Text = "Invalid parameters";
         }
     }
 }
