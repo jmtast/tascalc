@@ -17,42 +17,50 @@ namespace WpfApplication1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    public abstract class Operations
+    {
+        public virtual String operation
+        {
+            get { return ""; }
+        }
+
+        public abstract int operate(int a, int b);
+
+        public override String ToString()
+        {
+            return operation;
+        }
+    }
+
+    public class Sum : Operations
+    {
+        public override String operation
+        {
+            get { return "+"; }
+        }
+
+        public override int operate(int a, int b)
+        {
+            return a + b;
+        }
+    }
+
+    public class Substraction : Operations
+    {
+        public override String operation
+        {
+            get { return "-"; }
+        }
+
+        public override int operate(int a, int b)
+        {
+            return a - b;
+        }
+    }
+    
     public partial class MainWindow : Window
     {
-
-        public abstract class Operations
-        {
-            public abstract int operate(int a, int b);
-        }
-        public class Sum : Operations
-        {
-            public String operation = "+";
-
-            public override int operate(int a, int b)
-            {
-                return a + b;
-            }
-
-            public override String ToString()
-            {
-                return operation;
-            }
-        }
-
-        public class Substraction : Operations
-        {
-            public String operation = "-";
-
-            public override int operate(int a, int b)
-            {
-                return a - b;
-            }
-
-            public override String ToString()
-            {
-                return operation;
-            }
-        }
 
         public MainWindow()
         {
