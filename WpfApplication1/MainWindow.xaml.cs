@@ -17,21 +17,80 @@ namespace WpfApplication1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+            operations.Items.Add(new Sum());
+            operations.Items.Add(new Substract());
+            operations.Items.Add(new Multiply());
+            operations.SelectedItem = operations.Items[0];
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void operation_Click(object sender, RoutedEventArgs e, Operations operation)
         {
-            teeextbox.Text = "Hello WPF!";
+            int a, b;
+            bool emptyFields = false;
+            if (numberA.Text != "")
+            {
+                a = Convert.ToInt32(numberA.Text);    
+            }
+            else
+            {
+                a = 0;
+                emptyFields = true;
+            }
+            
+            if (numberB.Text != "")
+            {
+                b = Convert.ToInt32(numberB.Text);    
+            }
+            else
+            {
+                b = 0;
+                emptyFields = true;
+            }
+            if (emptyFields)
+            {
+                invalidParameters();
+            }
+            else
+            {
+                int result = operation.operate(a, b);
+                resultBlock.Text = Convert.ToString(result);
+            }
+
         }
 
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
+
+        private void textBox1_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void operations_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void doit_Click(object sender, RoutedEventArgs e)
+        {
+            //String operation = (String)operations.SelectedItem;
+            operation_Click(this, null, (Operations)operations.SelectedItem);
+        }
+
+        private void invalidParameters()
+        {
+            resultBlock.Text = "Invalid parameters";
+        }
     }
+
+    
 }
