@@ -46,7 +46,7 @@ namespace WpfApplication1
         }
     }
 
-    public class Substraction : Operations
+    public class Substract : Operations
     {
         public override String operation
         {
@@ -58,6 +58,19 @@ namespace WpfApplication1
             return a - b;
         }
     }
+
+    public class Multiply : Operations
+    {
+        public override String operation
+        {
+            get { return "*"; }
+        }
+
+        public override int operate(int a, int b)
+        {
+            return a * b;
+        }
+    }
     
     public partial class MainWindow : Window
     {
@@ -66,7 +79,8 @@ namespace WpfApplication1
         {
             InitializeComponent();
             operations.Items.Add(new Sum());
-            operations.Items.Add(new Substraction());
+            operations.Items.Add(new Substract());
+            operations.Items.Add(new Multiply());
             operations.SelectedItem = operations.Items[0];
         }
 
