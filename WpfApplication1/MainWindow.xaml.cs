@@ -19,15 +19,50 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public abstract class Operations
+        {
+            public abstract int operate(int a, int b);
+        }
+        public class Sum : Operations
+        {
+            public String operation = "+";
+
+            public override int operate(int a, int b)
+            {
+                return a + b;
+            }
+
+            public override String ToString()
+            {
+                return operation;
+            }
+        }
+
+        public class Substraction : Operations
+        {
+            public String operation = "-";
+
+            public override int operate(int a, int b)
+            {
+                return a - b;
+            }
+
+            public override String ToString()
+            {
+                return operation;
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
-            operations.Items.Add("+");
-            operations.Items.Add("-");
+            operations.Items.Add(new Sum());
+            operations.Items.Add(new Substraction());
             operations.SelectedItem = operations.Items[0];
         }
 
-        private void operation_Click(object sender, RoutedEventArgs e, String operation)
+        private void operation_Click(object sender, RoutedEventArgs e, Operations operation)
         {
             int a, b;
             bool emptyFields = false;
@@ -56,18 +91,7 @@ namespace WpfApplication1
             }
             else
             {
-                int result = 0;
-                if (operation.Equals("+"))
-                {
-                    result = a + b;                    
-                }
-                else
-                {
-                    if (operation.Equals("-"))
-                    {
-                        result = a - b;
-                    }
-                }
+                int result = operation.operate(a, b);
                 resultBlock.Text = Convert.ToString(result);
             }
 
@@ -90,8 +114,8 @@ namespace WpfApplication1
 
         private void doit_Click(object sender, RoutedEventArgs e)
         {
-            String operation = (String)operations.SelectedItem;
-            operation_Click(this, null, operation);
+            //String operation = (String)operations.SelectedItem;
+            operation_Click(this, null, (Operations)operations.SelectedItem);
         }
 
         private void invalidParameters()
@@ -99,4 +123,6 @@ namespace WpfApplication1
             resultBlock.Text = "Invalid parameters";
         }
     }
+
+    
 }
