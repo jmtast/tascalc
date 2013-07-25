@@ -3,7 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="248,0,0,122" Name="button1" VerticalAlignment="Bottom" Width="75" Click="button1_Click" />
-        <TextBox x:Name="teeextbox" Height="23" HorizontalAlignment="Left" Margin="228,137,0,0" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged" />
+        <Button Content="+" Height="23" HorizontalAlignment="Right" Margin="0,0,304,216" Name="button1" VerticalAlignment="Bottom" Width="31" Click="button1_Click" />
+        <TextBox x:Name="numberA" Height="23" HorizontalAlignment="Left" Margin="33,72,0,0" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged" />
+        <Label Content="Simple Calculator" Height="28" Margin="202,12,0,272" Name="label1" />
+        <TextBox x:Name="numberB" Height="23" HorizontalAlignment="Left" Margin="218,72,0,0" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged_1" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="364,72,0,0" Name="textBlock1" Text="Result:" VerticalAlignment="Top" />
+        <TextBlock x:Name="resultBlock" Height="23" HorizontalAlignment="Left" Margin="429,72,0,0" Text="" VerticalAlignment="Top" />
     </Grid>
 </Window>

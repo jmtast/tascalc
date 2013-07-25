@@ -26,10 +26,18 @@ namespace WpfApplication1
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            teeextbox.Text = "Hello WPF!";
+            int a = Convert.ToInt32(numberA.Text);
+            int b = Convert.ToInt32(numberB.Text);
+            int result = a + b;
+            resultBlock.Text = Convert.ToString(result);
         }
 
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
         }
