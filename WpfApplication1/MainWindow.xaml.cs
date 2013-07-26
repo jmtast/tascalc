@@ -27,6 +27,7 @@ namespace WpfApplication1
             operations.Items.Add(new Sum());
             operations.Items.Add(new Substract());
             operations.Items.Add(new Multiply());
+            operations.Items.Add(new Divide());
             operations.SelectedItem = operations.Items[0];
         }
 
@@ -59,8 +60,15 @@ namespace WpfApplication1
             }
             else
             {
-                int result = operation.operate(a, b);
-                resultBlock.Text = Convert.ToString(result);
+                try
+                {
+                    int result = operation.operate(a, b);
+                    resultBlock.Text = Convert.ToString(result);
+                }
+                catch (DivideByZeroException exception)
+                {
+                    invalidParameters();
+                }
             }
 
         }

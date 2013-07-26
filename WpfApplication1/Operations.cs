@@ -58,4 +58,24 @@ namespace WpfApplication1
             return a * b;
         }
     }
+
+    public class Divide : Operations
+    {
+        public override String operation
+        {
+            get { return "/"; }
+        }
+
+        public override int operate(int a, int b)
+        {
+            if (b != 0)
+            {
+                return a / b;    
+            }
+            else
+            {
+                throw new DivideByZeroException("");
+            }
+        }
+    }
 }
