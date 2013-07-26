@@ -1,0 +1,10 @@
+bin/
+_ReSharper.*/
+obj/
+*.user
+*.cache
+*.suo
+*.rnc~
+*.rnc
+*.exe
+*.checkstyle
