@@ -56,7 +56,7 @@ namespace WpfApplication1
             }
             if (emptyFields)
             {
-                invalidParameters();
+                writeMessage("A fields is empty");
             }
             else
             {
@@ -67,7 +67,7 @@ namespace WpfApplication1
                 }
                 catch (DivideByZeroException exception)
                 {
-                    invalidParameters();
+                    writeMessage("Divided by zero");
                 }
             }
 
@@ -94,9 +94,9 @@ namespace WpfApplication1
             operation_Click(this, null, (Operations)operations.SelectedItem);
         }
 
-        private void invalidParameters()
+        private void writeMessage(String message)
         {
-            resultBlock.Text = "Invalid parameters";
+            resultBlock.Text = message;
         }
     }
 
