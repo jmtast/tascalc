@@ -27,16 +27,17 @@ namespace WpfApplication1
             operations.Items.Add(new Sum());
             operations.Items.Add(new Substract());
             operations.Items.Add(new Multiply());
+            operations.Items.Add(new Divide());
             operations.SelectedItem = operations.Items[0];
         }
 
         private void operation_Click(object sender, RoutedEventArgs e, Operations operation)
         {
-            int a, b;
+            double a, b;
             bool emptyFields = false;
             if (numberA.Text != "")
             {
-                a = Convert.ToInt32(numberA.Text);    
+                a = Convert.ToDouble(numberA.Text);    
             }
             else
             {
@@ -46,7 +47,7 @@ namespace WpfApplication1
             
             if (numberB.Text != "")
             {
-                b = Convert.ToInt32(numberB.Text);    
+                b = Convert.ToDouble(numberB.Text);    
             }
             else
             {
@@ -55,12 +56,19 @@ namespace WpfApplication1
             }
             if (emptyFields)
             {
-                invalidParameters();
+                writeMessage("A field is empty");
             }
             else
             {
-                int result = operation.operate(a, b);
-                resultBlock.Text = Convert.ToString(result);
+                try
+                {
+                    double result = operation.operate(a, b);
+                    resultBlock.Text = Convert.ToString(result);
+                }
+                catch (DivideByZeroException exception)
+                {
+                    writeMessage("Divided by zero");
+                }
             }
 
         }
@@ -86,11 +94,9 @@ namespace WpfApplication1
             operation_Click(this, null, (Operations)operations.SelectedItem);
         }
 
-        private void invalidParameters()
+        private void writeMessage(String message)
         {
-            resultBlock.Text = "Invalid parameters";
+            resultBlock.Text = message;
         }
     }
-
-    
 }
