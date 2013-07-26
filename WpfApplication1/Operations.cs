@@ -7,7 +7,7 @@ namespace WpfApplication1
 {
     public abstract class Operations
     {
-        public virtual String operation
+        public virtual String operations
         {
             get { return ""; }
         }
@@ -16,13 +16,13 @@ namespace WpfApplication1
 
         public override String ToString()
         {
-            return operation;
+            return operations;
         }
     }
 
     public class Sum : Operations
     {
-        public override String operation
+        public override String operations
         {
             get { return "+"; }
         }
@@ -35,7 +35,7 @@ namespace WpfApplication1
 
     public class Substract : Operations
     {
-        public override String operation
+        public override String operations
         {
             get { return "-"; }
         }
@@ -48,7 +48,7 @@ namespace WpfApplication1
 
     public class Multiply : Operations
     {
-        public override String operation
+        public override String operations
         {
             get { return "*"; }
         }
@@ -61,7 +61,7 @@ namespace WpfApplication1
 
     public class Divide : Operations
     {
-        public override String operation
+        public override String operations
         {
             get { return "/"; }
         }
