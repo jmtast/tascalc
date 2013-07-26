@@ -56,7 +56,7 @@ namespace WpfApplication1
             }
             if (emptyFields)
             {
-                writeMessage("A fields is empty");
+                writeMessage("A field is empty");
             }
             else
             {
@@ -99,6 +99,4 @@ namespace WpfApplication1
             resultBlock.Text = message;
         }
     }
-
-    
 }
