@@ -6,4 +6,5 @@ obj/
 *.suo
 *.rnc~
 *.rnc
+*.exe
 *.checkstyle

@@ -12,7 +12,7 @@ namespace WpfApplication1
             get { return ""; }
         }
 
-        public abstract int operate(int a, int b);
+        public abstract double operate(double a, double b);
 
         public override String ToString()
         {
@@ -27,7 +27,7 @@ namespace WpfApplication1
             get { return "+"; }
         }
 
-        public override int operate(int a, int b)
+        public override double operate(double a, double b)
         {
             return a + b;
         }
@@ -40,7 +40,7 @@ namespace WpfApplication1
             get { return "-"; }
         }
 
-        public override int operate(int a, int b)
+        public override double operate(double a, double b)
         {
             return a - b;
         }
@@ -53,7 +53,7 @@ namespace WpfApplication1
             get { return "*"; }
         }
 
-        public override int operate(int a, int b)
+        public override double operate(double a, double b)
         {
             return a * b;
         }
@@ -66,7 +66,7 @@ namespace WpfApplication1
             get { return "/"; }
         }
 
-        public override int operate(int a, int b)
+        public override double operate(double a, double b)
         {
             if (b != 0)
             {

@@ -33,11 +33,11 @@ namespace WpfApplication1
 
         private void operation_Click(object sender, RoutedEventArgs e, Operations operation)
         {
-            int a, b;
+            double a, b;
             bool emptyFields = false;
             if (numberA.Text != "")
             {
-                a = Convert.ToInt32(numberA.Text);    
+                a = Convert.ToDouble(numberA.Text);    
             }
             else
             {
@@ -47,7 +47,7 @@ namespace WpfApplication1
             
             if (numberB.Text != "")
             {
-                b = Convert.ToInt32(numberB.Text);    
+                b = Convert.ToDouble(numberB.Text);    
             }
             else
             {
@@ -62,7 +62,7 @@ namespace WpfApplication1
             {
                 try
                 {
-                    int result = operation.operate(a, b);
+                    double result = operation.operate(a, b);
                     resultBlock.Text = Convert.ToString(result);
                 }
                 catch (DivideByZeroException exception)
