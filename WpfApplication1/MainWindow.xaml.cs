@@ -21,6 +21,8 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         bool hasDot = false;
+        OperationBuffer operationBuffer = new OperationBuffer();
+        private bool cleanDisplay = false;
 
         public MainWindow()
         {
@@ -39,7 +41,7 @@ namespace WpfApplication1
             bool emptyFields = false;
             if (numberA.Text != "")
             {
-                a = Convert.ToDouble(numberA.Text);    
+                a = Convert.ToDouble(numberA.Text);
             }
             else
             {
@@ -113,59 +115,163 @@ namespace WpfApplication1
             }
         }
 
-        private void doit_Click_1(object sender, RoutedEventArgs e)
+        private void Solve(object sender, RoutedEventArgs e)
         {
-            operation_Click(this, null, (Operations)operations.SelectedItem);
+            double secondOperand = Convert.ToDouble(resultBlock.Text);
+            operationBuffer.setSecondOperand(secondOperand);
+            double firstOperand;
+            try
+                {
+                    double result = operationBuffer.Solve();
+                    resultBlock.Text = Convert.ToString(result);
+                    firstOperand = Convert.ToDouble(resultBlock.Text);
+                }
+            catch (DivideByZeroException exception)
+                {
+                    writeMessage("Divided by zero");
+                    firstOperand = 0;
+                }
+            cleanDisplay = true;
         }
 
         private void Click0(object sender, RoutedEventArgs e)
         {
-            addCharacter("0");
+            if (cleanDisplay)
+            {
+                writeMessage("0");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("0");
+            }
         }
 
         private void Click1(object sender, RoutedEventArgs e)
         {
-            addCharacter("1");
+            if (cleanDisplay)
+            {
+                writeMessage("1");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("1");
+            }
         }
 
         private void Click2(object sender, RoutedEventArgs e)
         {
-            addCharacter("2");
+            if (cleanDisplay)
+            {
+                writeMessage("2");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("2");
+            }
         }
 
         private void Click3(object sender, RoutedEventArgs e)
         {
-            addCharacter("3");
+            if (cleanDisplay)
+            {
+                writeMessage("3");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("3");
+            }
         }
 
         private void Click4(object sender, RoutedEventArgs e)
         {
-            addCharacter("4");
+            if (cleanDisplay)
+            {
+                writeMessage("4");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("4");
+            }
         }
 
         private void Click5(object sender, RoutedEventArgs e)
         {
-            addCharacter("5");
+            if (cleanDisplay)
+            {
+                writeMessage("5");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("5");
+            }
         }
 
         private void Click6(object sender, RoutedEventArgs e)
         {
-            addCharacter("6");
+            if (cleanDisplay)
+            {
+                writeMessage("6");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("6");
+            }
         }
 
         private void Click7(object sender, RoutedEventArgs e)
         {
-            addCharacter("7");
+            if (cleanDisplay)
+            {
+                writeMessage("7");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("7");
+            }
         }
 
         private void Click8(object sender, RoutedEventArgs e)
         {
-            addCharacter("8");
+            if (cleanDisplay)
+            {
+                writeMessage("8");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("8");
+            }
         }
 
         private void Click9(object sender, RoutedEventArgs e)
         {
-            addCharacter("9");
+            if (cleanDisplay)
+            {
+                writeMessage("9");
+                cleanDisplay = false;
+                hasDot = false;
+            }
+            else
+            {
+                addCharacter("9");
+            }
         }
 
         private void ClickC(object sender, RoutedEventArgs e)
@@ -181,6 +287,38 @@ namespace WpfApplication1
                 hasDot = true;
                 addCharacter(".");
             }
+        }
+
+        private void ClickSum(object sender, RoutedEventArgs e)
+        {
+            double firstOperand = Convert.ToDouble(resultBlock.Text);
+            operationBuffer.setFirstOperand(firstOperand);
+            operationBuffer.setOperation(new Sum());
+            cleanDisplay = true;
+        }
+
+        private void ClickSubstract(object sender, RoutedEventArgs e)
+        {
+            double firstOperand = Convert.ToDouble(resultBlock.Text);
+            operationBuffer.setFirstOperand(firstOperand);
+            operationBuffer.setOperation(new Substract());
+            cleanDisplay = true;
+        }
+
+        private void ClickMultiply(object sender, RoutedEventArgs e)
+        {
+            double firstOperand = Convert.ToDouble(resultBlock.Text);
+            operationBuffer.setFirstOperand(firstOperand);
+            operationBuffer.setOperation(new Multiply());
+            cleanDisplay = true;
+        }
+
+        private void ClickDivide(object sender, RoutedEventArgs e)
+        {
+            double firstOperand = Convert.ToDouble(resultBlock.Text);
+            operationBuffer.setFirstOperand(firstOperand);
+            operationBuffer.setOperation(new Divide());
+            cleanDisplay = true;
         }
     }
 }
