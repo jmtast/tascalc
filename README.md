@@ -1,3 +1,3 @@
 # This is the AWESOMEST calculator EVER!
 
-By *Alejandro Ferrero* ( **/alejandrof** ) and *Juan Manuel Tastzian* ( **/jmtast**)
+By *Alejandro Ferrero* (github.com/alejandrof) and *Juan Manuel Tastzian* (github.com/jmtast)
