@@ -1,6 +1,6 @@
-bin/*
+WpfApplication1/bin/*
 _ReSharper.*/*
-obj/*
+WpfApplication1/obj/*
 *.user
 *.cache
 *.suo
