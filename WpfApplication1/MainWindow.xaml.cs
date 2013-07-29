@@ -27,75 +27,7 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
-            operations.Items.Add(new Sum());
-            operations.Items.Add(new Substract());
-            operations.Items.Add(new Multiply());
-            operations.Items.Add(new Divide());
-            operations.SelectedItem = operations.Items[0];
             writeMessage("0");
-        }
-
-        private void operation_Click(object sender, RoutedEventArgs e, Operations operation)
-        {
-            double a, b;
-            bool emptyFields = false;
-            if (numberA.Text != "")
-            {
-                a = Convert.ToDouble(numberA.Text);
-            }
-            else
-            {
-                a = 0;
-                emptyFields = true;
-            }
-            
-            if (numberB.Text != "")
-            {
-                b = Convert.ToDouble(numberB.Text);    
-            }
-            else
-            {
-                b = 0;
-                emptyFields = true;
-            }
-            if (emptyFields)
-            {
-                writeMessage("A field is empty");
-            }
-            else
-            {
-                try
-                {
-                    double result = operation.operate(a, b);
-                    resultBlock.Text = Convert.ToString(result);
-                }
-                catch (DivideByZeroException exception)
-                {
-                    writeMessage("Divided by zero");
-                }
-            }
-
-        }
-
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void operations_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-
-        private void doit_Click(object sender, RoutedEventArgs e)
-        {
-            //String operation = (String)operations.SelectedItem;
-            operation_Click(this, null, (Operations)operations.SelectedItem);
         }
 
         private void writeMessage(String message)
@@ -119,17 +51,16 @@ namespace WpfApplication1
         {
             double secondOperand = Convert.ToDouble(resultBlock.Text);
             operationBuffer.setSecondOperand(secondOperand);
-            double firstOperand;
             try
                 {
                     double result = operationBuffer.Solve();
                     resultBlock.Text = Convert.ToString(result);
-                    firstOperand = Convert.ToDouble(resultBlock.Text);
+                    operationBuffer.setFirstOperand(Convert.ToDouble(resultBlock.Text));
                 }
             catch (DivideByZeroException exception)
                 {
                     writeMessage("Divided by zero");
-                    firstOperand = 0;
+                    operationBuffer.setFirstOperand(0);
                 }
             cleanDisplay = true;
         }
@@ -291,34 +222,47 @@ namespace WpfApplication1
 
         private void ClickSum(object sender, RoutedEventArgs e)
         {
-            double firstOperand = Convert.ToDouble(resultBlock.Text);
-            operationBuffer.setFirstOperand(firstOperand);
-            operationBuffer.setOperation(new Sum());
-            cleanDisplay = true;
+            if (!cleanDisplay)
+            {
+                double firstOperand = Convert.ToDouble(resultBlock.Text);
+                operationBuffer.setFirstOperand(firstOperand);
+                operationBuffer.setOperation(new Sum());
+                cleanDisplay = true;   
+            }
         }
 
         private void ClickSubstract(object sender, RoutedEventArgs e)
         {
-            double firstOperand = Convert.ToDouble(resultBlock.Text);
-            operationBuffer.setFirstOperand(firstOperand);
-            operationBuffer.setOperation(new Substract());
-            cleanDisplay = true;
+            if (!cleanDisplay)
+            {
+                double firstOperand = Convert.ToDouble(resultBlock.Text);
+                operationBuffer.setFirstOperand(firstOperand);
+                operationBuffer.setOperation(new Substract());
+                cleanDisplay = true;
+            }
         }
 
         private void ClickMultiply(object sender, RoutedEventArgs e)
         {
-            double firstOperand = Convert.ToDouble(resultBlock.Text);
-            operationBuffer.setFirstOperand(firstOperand);
-            operationBuffer.setOperation(new Multiply());
-            cleanDisplay = true;
+            if (!cleanDisplay)
+            {
+                double firstOperand = Convert.ToDouble(resultBlock.Text);
+                operationBuffer.setFirstOperand(firstOperand);
+                operationBuffer.setOperation(new Multiply());
+                cleanDisplay = true;
+            }
         }
 
         private void ClickDivide(object sender, RoutedEventArgs e)
         {
-            double firstOperand = Convert.ToDouble(resultBlock.Text);
-            operationBuffer.setFirstOperand(firstOperand);
-            operationBuffer.setOperation(new Divide());
-            cleanDisplay = true;
+            if (!cleanDisplay)
+            {
+                double firstOperand = Convert.ToDouble(resultBlock.Text);
+                operationBuffer.setFirstOperand(firstOperand);
+                operationBuffer.setOperation(new Divide());
+                cleanDisplay = true;
+            }
         }
+
     }
 }
