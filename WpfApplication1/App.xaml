@@ -24,7 +24,16 @@
                                 <Setter Property="Fill" TargetName="rectangle" Value="#FFECECEC"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Fill" TargetName="rectangle" Value="#FFABABAB"/>
+                                <Setter Property="Fill" TargetName="rectangle">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF474747" Offset="0"/>
+                                            <GradientStop Color="#FFD7D7D7" Offset="1"/>
+                                            <GradientStop Color="#FEA8A8A8" Offset="0.107"/>
+                                            <GradientStop Color="#FEBCBCBC" Offset="0.198"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Fill" TargetName="rectangle" Value="#7FCBCBCB"/>
