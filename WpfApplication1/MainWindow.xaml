@@ -18,25 +18,25 @@
         </Rectangle>
         <TextBlock x:Name="resultBlock" Panel.ZIndex="9" Width="391" Height="64" TextWrapping="Wrap" Canvas.Left="116" Canvas.Top="100" Foreground="White" FontSize="48" FontWeight="Bold" TextAlignment="Right"/>
         <WrapPanel Panel.ZIndex="5" Width="420" Height="542" Canvas.Left="101" Canvas.Top="194">
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="C" Foreground="White" FontSize="45.333"/>
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="C" Foreground="White" FontSize="45.333" Click="ClickC" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="±" Foreground="White" FontSize="45.333"/>
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="√" Foreground="White" FontSize="45.333"/>
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="%" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="7" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="8" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="9" Foreground="White" FontSize="45.333"/>
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="7" Foreground="White" FontSize="45.333" Click="Click7" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="8" Foreground="White" FontSize="45.333" Click="Click8" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="9" Foreground="White" FontSize="45.333" CommandParameter="{Binding Title}" Click="Click9" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="÷" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="4" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="5" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="6" Foreground="White" FontSize="45.333"/>
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="4" Foreground="White" FontSize="45.333" Click="Click4" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="5" Foreground="White" FontSize="45.333" Click="Click5" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="6" Foreground="White" FontSize="45.333" Click="Click6" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="x" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="1" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="2" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="3" Foreground="White" FontSize="45.333"/>
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="1" Foreground="White" FontSize="45.333" Click="Click1" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="2" Foreground="White" FontSize="45.333" Click="Click2" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="3" Foreground="White" FontSize="45.333" Click="Click3" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="-" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="0" Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="." Foreground="White" FontSize="45.333"/>
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc2}" Content="=" Foreground="White" FontSize="45.333" x:Name="doit"/>
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="0" Foreground="White" FontSize="45.333" Click="Click0" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="." Foreground="White" FontSize="45.333" Click="ClickDot" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc2}" Content="=" Foreground="White" FontSize="45.333" x:Name="doit" Click="doit_Click_1" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="+" Foreground="White" FontSize="45.333"/>
             <TextBox Panel.ZIndex="8" x:Name="numberA" HorizontalAlignment="Left" Margin="10,50,0,144" Width="141" TextChanged="textBox1_TextChanged" FontSize="42.667" MaxLines="1" MaxLength="5" AutoWordSelection="True" Padding="8,0" />
             <ComboBox Height="23" HorizontalAlignment="Left" Margin="30,70,0,0" x:Name="operations" VerticalAlignment="Top" Width="55" SelectionChanged="operations_SelectionChanged" />
