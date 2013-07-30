@@ -301,5 +301,20 @@ namespace WpfApplication1
                 cleanDisplay = true;
             }
         }
+
+        private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }
