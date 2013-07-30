@@ -9,8 +9,8 @@
             <DropShadowEffect x:Name="DS" BlurRadius="15" ShadowDepth="0" Color="Gray" />
         </Canvas.Effect>
         <Rectangle Panel.ZIndex="2" Fill="White" Canvas.Left="81" Canvas.Top="69" Width="460" Height="607" RadiusX="6" RadiusY="6" StrokeThickness="0" />
-        <Button Panel.ZIndex="11" Canvas.Left="498" Canvas.Top="84" Content="x" Height="23" Name="Minimize" Width="23" Click="Minimize_Click" />
-        <Button Panel.ZIndex="11" Canvas.Left="469" Canvas.Top="84" Content="_" Height="23" Name="Close" Width="23" Click="Close_Click" />
+        <Button Panel.ZIndex="11" Canvas.Left="498" Canvas.Top="84" Content="x" Height="23" Name="Minimize" Width="23" Click="Minimize_Click" Style="{DynamicResource ButtonBar}" Foreground="White" FontWeight="Bold" />
+        <Button Panel.ZIndex="11" Canvas.Left="469" Canvas.Top="84" Content="_" Height="23" Name="Close" Width="23" Click="Close_Click" Style="{DynamicResource ButtonBar}" Foreground="White" FontWeight="Bold" />
         <Rectangle Panel.ZIndex="3" Canvas.Left="101" Canvas.Top="117" Width="420" Height="94" RadiusX="4" RadiusY="4" StrokeThickness="0" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -43,8 +43,8 @@
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc2}" Content="=" Foreground="White" FontSize="45.333" x:Name="doit" Click="Solve" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="+" Foreground="White" FontSize="45.333" Click="ClickSum" />
         </WrapPanel>
-        <Label Panel.ZIndex="6" Width="125" Height="29" Content="T·A·S·C·A·L·C" Canvas.Left="101" Canvas.Top="84" FontWeight="Bold" Foreground="#FFD5D5D5" FontSize="16" FontFamily="Cooper Black"/>
-        <Rectangle Panel.ZIndex="4" Canvas.Left="81" Canvas.Top="69" Height="607" Name="TitleBar" Width="460" MouseDown="TitleBar_MouseDown" Fill="#00EF7474">
+        <Label Panel.ZIndex="6" Width="125" Height="29" Content="T·A·S·C·A·L·C" Canvas.Left="101" Canvas.Top="84" FontWeight="Bold" Foreground="#FF40A5D1" FontSize="16" FontFamily="Cooper Black"/>
+        <Rectangle Panel.ZIndex="4" Canvas.Left="81" Canvas.Top="69" Height="607" Name="TitleBar" Width="460" MouseDown="TitleBar_MouseDown" Fill="#29D1D1BE">
             <Rectangle.Stroke>
                 <SolidColorBrush />
             </Rectangle.Stroke>
