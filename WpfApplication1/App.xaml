@@ -21,22 +21,13 @@
                             </Trigger>
                             <Trigger Property="IsDefaulted" Value="True"/>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Fill" TargetName="rectangle" Value="#FFECECEC"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FFAFAFAF"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Fill" TargetName="rectangle">
-                                    <Setter.Value>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="#FF474747" Offset="0"/>
-                                            <GradientStop Color="#FFD7D7D7" Offset="1"/>
-                                            <GradientStop Color="#FEA8A8A8" Offset="0.107"/>
-                                            <GradientStop Color="#FEBCBCBC" Offset="0.198"/>
-                                        </LinearGradientBrush>
-                                    </Setter.Value>
-                                </Setter>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF828282"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Fill" TargetName="rectangle" Value="#7FCBCBCB"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FFEEEEEE"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -54,20 +45,44 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True">
                                 <Setter Property="Fill" TargetName="rectangle" Value="#FF92B376"/>
-                                <Setter Property="Stroke" TargetName="rectangle" Value="#FF767676"/>
-                                <Setter Property="StrokeThickness" TargetName="rectangle" Value="2"/>
                             </Trigger>
                             <Trigger Property="IsDefaulted" Value="True">
                                 <Setter Property="Fill" TargetName="rectangle" Value="#FF92B376"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Fill" TargetName="rectangle" Value="#FFBED9A8"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF728C5C"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Fill" TargetName="rectangle" Value="#FF88AD69"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF4D6539"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Fill" TargetName="rectangle" Value="#7F88AD69"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonBar" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="rectangle" Fill="#FFCBCBCB" StrokeThickness="0" RadiusX="2" RadiusY="2" />
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FFCBCBCB"/>
+                            </Trigger>
+                            <Trigger Property="IsDefaulted" Value="True">
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF65B3D5"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF8AC5DE"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF357B9A"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
