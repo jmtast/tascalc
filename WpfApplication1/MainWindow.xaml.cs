@@ -301,5 +301,10 @@ namespace WpfApplication1
                 cleanDisplay = true;
             }
         }
+
+        private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }
