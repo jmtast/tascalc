@@ -264,5 +264,13 @@ namespace WpfApplication1
             }
         }
 
+        private void ClickNegate(object sender, RoutedEventArgs e)
+        {
+            double firstOperand = Convert.ToDouble(resultBlock.Text);
+            firstOperand = -firstOperand;
+            operationBuffer.setFirstOperand(firstOperand);
+            resultBlock.Text = Convert.ToString(firstOperand);
+        }
+
     }
 }
