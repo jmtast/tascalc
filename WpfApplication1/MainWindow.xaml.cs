@@ -23,6 +23,7 @@ namespace WpfApplication1
         bool hasDot = false;
         OperationBuffer operationBuffer = new OperationBuffer();
         private bool cleanDisplay = false;
+        private bool repeat = false;
 
         public MainWindow()
         {
@@ -49,20 +50,38 @@ namespace WpfApplication1
 
         private void Solve(object sender, RoutedEventArgs e)
         {
-            double secondOperand = Convert.ToDouble(resultBlock.Text);
-            operationBuffer.setSecondOperand(secondOperand);
-            try
+            if (repeat)
+            {
+                // Repeat setup
+                double firstRepeatOperand = operationBuffer.getFirstOperand();
+                Operations lastOperator = operationBuffer.getOperation();
+                double secondRepeatOperand = Convert.ToDouble(resultBlock.Text);
+
+                operationBuffer.setOperation(new Repeat(lastOperator));
+
+                double result = operationBuffer.Solve();
+                writeMessage(Convert.ToString(result));
+                operationBuffer.setFirstOperand(Convert.ToDouble(resultBlock.Text));
+            }
+            else
+            {
+                // Normal operation
+                double secondOperand = Convert.ToDouble(resultBlock.Text);
+                operationBuffer.setSecondOperand(secondOperand);
+                try
                 {
                     double result = operationBuffer.Solve();
-                    resultBlock.Text = Convert.ToString(result);
+                    writeMessage(Convert.ToString(result));
                     operationBuffer.setFirstOperand(Convert.ToDouble(resultBlock.Text));
                 }
-            catch (DivideByZeroException exception)
+                catch (DivideByZeroException exception)
                 {
                     writeMessage("Divided by zero");
                     operationBuffer.setFirstOperand(0);
-                }
+                }   
+            }
             cleanDisplay = true;
+            repeat = true;
         }
 
         private void Click0(object sender, RoutedEventArgs e)
@@ -227,7 +246,8 @@ namespace WpfApplication1
                 double firstOperand = Convert.ToDouble(resultBlock.Text);
                 operationBuffer.setFirstOperand(firstOperand);
                 operationBuffer.setOperation(new Sum());
-                cleanDisplay = true;   
+                cleanDisplay = true;
+                repeat = false;
             }
         }
 
@@ -239,6 +259,7 @@ namespace WpfApplication1
                 operationBuffer.setFirstOperand(firstOperand);
                 operationBuffer.setOperation(new Substract());
                 cleanDisplay = true;
+                repeat = false;
             }
         }
 
@@ -250,6 +271,7 @@ namespace WpfApplication1
                 operationBuffer.setFirstOperand(firstOperand);
                 operationBuffer.setOperation(new Multiply());
                 cleanDisplay = true;
+                repeat = false;
             }
         }
 
@@ -261,6 +283,7 @@ namespace WpfApplication1
                 operationBuffer.setFirstOperand(firstOperand);
                 operationBuffer.setOperation(new Divide());
                 cleanDisplay = true;
+                repeat = false;
             }
         }
 
@@ -269,7 +292,7 @@ namespace WpfApplication1
             double firstOperand = Convert.ToDouble(resultBlock.Text);
             firstOperand = -firstOperand;
             operationBuffer.setFirstOperand(firstOperand);
-            resultBlock.Text = Convert.ToString(firstOperand);
+            writeMessage(Convert.ToString(firstOperand));
         }
 
         private void ClickSquareRoot(object sender, RoutedEventArgs e)
@@ -281,13 +304,14 @@ namespace WpfApplication1
                 {
                     operand = Math.Sqrt(operand);
                     operationBuffer.setFirstOperand(operand);
-                    resultBlock.Text = Convert.ToString(operand);
+                    writeMessage(Convert.ToString(operand));
                 }
                 else
                 {
                     writeMessage("Negative Sqrt");
                 }
                 cleanDisplay = true;
+                repeat = false;
             }
         }
 
@@ -299,6 +323,7 @@ namespace WpfApplication1
                 operationBuffer.setFirstOperand(firstOperand);
                 operationBuffer.setOperation(new Percentage());
                 cleanDisplay = true;
+                repeat = false;
             }
         }
     }

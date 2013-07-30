@@ -79,6 +79,25 @@ namespace WpfApplication1
         }
     }
 
+    public class Repeat : Operations
+    {
+        Operations _operation = new Sum();
+
+        public Repeat(Operations lastOperator)
+        {
+            _operation = lastOperator;
+        }
+        public override String operations
+        {
+            get { return "="; }
+        }
+
+        public override double operate(double a, double b)
+        {
+            return _operation.operate(a,b);
+        }
+    }
+
     public class Percentage : Operations
     {
         public override String operations
@@ -104,12 +123,19 @@ namespace WpfApplication1
 
         internal double Solve()
         {
-            return operation.operate(firstOperand, secondOperand);
+            firstOperand = operation.operate(firstOperand, secondOperand);
+            setFirstOperand(firstOperand);
+            return firstOperand;
         }
 
         internal void setFirstOperand(double operand)
         {
             firstOperand = operand;
+        }
+
+        internal double getFirstOperand()
+        {
+            return firstOperand;
         }
 
         internal void setSecondOperand(double operand)
@@ -120,6 +146,11 @@ namespace WpfApplication1
         internal void setOperation(Operations _operation)
         {
             operation = _operation;
+        }
+        
+        internal Operations getOperation()
+        {
+            return operation;
         }
     }
 }
