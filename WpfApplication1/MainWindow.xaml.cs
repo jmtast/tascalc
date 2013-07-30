@@ -84,144 +84,68 @@ namespace WpfApplication1
             repeat = true;
         }
 
-        private void Click0(object sender, RoutedEventArgs e)
+        private void ClickNumber(String number)
         {
             if (cleanDisplay)
             {
-                writeMessage("0");
+                writeMessage(number);
                 cleanDisplay = false;
                 hasDot = false;
             }
             else
             {
-                addCharacter("0");
+                addCharacter(number);
             }
+        }
+
+        private void Click0(object sender, RoutedEventArgs e)
+        {
+            ClickNumber("0");
         }
 
         private void Click1(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("1");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("1");
-            }
+            ClickNumber("1");
         }
 
         private void Click2(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("2");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("2");
-            }
+            ClickNumber("2");
         }
 
         private void Click3(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("3");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("3");
-            }
+            ClickNumber("3");
         }
 
         private void Click4(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("4");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("4");
-            }
+            ClickNumber("4");
         }
 
         private void Click5(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("5");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("5");
-            }
+            ClickNumber("5");
         }
 
         private void Click6(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("6");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("6");
-            }
+            ClickNumber("6");
         }
 
         private void Click7(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("7");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("7");
-            }
+            ClickNumber("7");
         }
 
         private void Click8(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("8");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("8");
-            }
+            ClickNumber("8");
         }
 
         private void Click9(object sender, RoutedEventArgs e)
         {
-            if (cleanDisplay)
-            {
-                writeMessage("9");
-                cleanDisplay = false;
-                hasDot = false;
-            }
-            else
-            {
-                addCharacter("9");
-            }
+            ClickNumber("9");
         }
 
         private void ClickC(object sender, RoutedEventArgs e)
