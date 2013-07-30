@@ -291,5 +291,15 @@ namespace WpfApplication1
             }
         }
 
+        private void ClickPercentage(object sender, RoutedEventArgs e)
+        {
+            if (!cleanDisplay)
+            {
+                double firstOperand = Convert.ToDouble(resultBlock.Text);
+                operationBuffer.setFirstOperand(firstOperand);
+                operationBuffer.setOperation(new Percentage());
+                cleanDisplay = true;
+            }
+        }
     }
 }

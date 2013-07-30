@@ -21,7 +21,7 @@
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="C" Foreground="White" FontSize="45.333" Click="ClickC" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="±" Foreground="White" FontSize="45.333" Click="ClickNegate" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="√" Foreground="White" FontSize="45.333" Click="ClickSquareRoot" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="%" Foreground="White" FontSize="45.333"/>
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="%" Foreground="White" FontSize="45.333" Click="ClickPercentage" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="7" Foreground="White" FontSize="45.333" Click="Click7" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="8" Foreground="White" FontSize="45.333" Click="Click8" />
             <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="9" Foreground="White" FontSize="45.333" CommandParameter="{Binding Title}" Click="Click9" />

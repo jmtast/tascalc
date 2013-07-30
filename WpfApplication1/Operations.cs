@@ -79,6 +79,19 @@ namespace WpfApplication1
         }
     }
 
+    public class Percentage : Operations
+    {
+        public override String operations
+        {
+            get { return "%"; }
+        }
+
+        public override double operate(double a, double b)
+        {
+            return (a * b)/100;
+        }
+    }
+
     public class OperationBuffer : Operations
     {
         private double firstOperand, secondOperand;
