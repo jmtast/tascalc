@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	x:Class="WpfApplication1.MainWindow"
 	x:Name="Window"
-    Title="TasCalc v2.0" Height="796.5" Width="640" Foreground="{x:Null}" Background="#FF61CDEA" ScrollViewer.VerticalScrollBarVisibility="Disabled" MinWidth="640" MinHeight="640" HorizontalAlignment="Center" VerticalAlignment="Center">
+    Title="TasCalc v2.0" Height="780" Width="640" Foreground="{x:Null}" Background="#FF61CDEA" ScrollViewer.VerticalScrollBarVisibility="Disabled" MinWidth="640" MinHeight="780" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="640" MaxHeight="780">
     <Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.IsSharedSizeScope="True" ScrollViewer.CanContentScroll="True" HorizontalAlignment="Left" VerticalAlignment="Top">
         <Rectangle Panel.ZIndex="1" Fill="#FF88B2B5" Canvas.Left="81" Canvas.Top="97" Width="460" Height="590" RadiusX="6" RadiusY="6" StrokeThickness="0" />
         <Rectangle Panel.ZIndex="2" Fill="White" Canvas.Left="81" Canvas.Top="69" Width="460" Height="607" RadiusX="6" RadiusY="6" StrokeThickness="0" />
