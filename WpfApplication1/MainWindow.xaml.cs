@@ -272,5 +272,24 @@ namespace WpfApplication1
             resultBlock.Text = Convert.ToString(firstOperand);
         }
 
+        private void ClickSquareRoot(object sender, RoutedEventArgs e)
+        {
+            if (!cleanDisplay)
+            {
+                double operand = Convert.ToDouble(resultBlock.Text);
+                if (operand >= 0)
+                {
+                    operand = Math.Sqrt(operand);
+                    operationBuffer.setFirstOperand(operand);
+                    resultBlock.Text = Convert.ToString(operand);
+                }
+                else
+                {
+                    writeMessage("Negative Sqrt");
+                }
+                cleanDisplay = true;
+            }
+        }
+
     }
 }
