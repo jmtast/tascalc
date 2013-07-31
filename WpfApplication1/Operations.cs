@@ -116,6 +116,13 @@ namespace WpfApplication1
         private double firstOperand, secondOperand;
         private Operations operation;
 
+        public OperationBuffer()
+        {
+            firstOperand = 0;
+            secondOperand = 0;
+            operation = new Sum();
+        }
+
         public override double operate(double a, double b)
         {
             return 0;
