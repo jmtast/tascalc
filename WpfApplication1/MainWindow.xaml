@@ -3,15 +3,15 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	x:Class="WpfApplication1.MainWindow"
 	x:Name="Window"
-    Title="TasCalc v2.0" Foreground="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled" WindowStyle="None" AllowsTransparency="True" Icon="/WpfApplication1;component/Images/1375231433_Calculator.png" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="719" d:DesignWidth="493" Width="490" Height="670" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" MinWidth="490" MinHeight="670" MaxWidth="490" MaxHeight="670" ResizeMode="NoResize">
+    Title="TasCalc v2.0" Foreground="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled" WindowStyle="None" AllowsTransparency="True" Icon="/WpfApplication1;component/Images/1375231433_Calculator.png" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="719" d:DesignWidth="493" Width="490" Height="670" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" MinWidth="490" MinHeight="670" MaxWidth="490" MaxHeight="670" ResizeMode="NoResize" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
     <Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.IsSharedSizeScope="True" ScrollViewer.CanContentScroll="True" HorizontalAlignment="Left" VerticalAlignment="Top">
         <Canvas.Effect>
-            <DropShadowEffect x:Name="DS" BlurRadius="15" ShadowDepth="0" Color="Gray" />
+            <DropShadowEffect x:Name="DS" BlurRadius="15" ShadowDepth="0" Opacity="0.3" Color="Black" />
         </Canvas.Effect>
         <Rectangle Panel.ZIndex="2" Fill="White" Canvas.Left="5" Canvas.Top="10" Width="460" Height="607" RadiusX="6" RadiusY="6" StrokeThickness="0" />
-        <Button Panel.ZIndex="11" Canvas.Left="420" Canvas.Top="20" Content="x" Height="23" Name="Minimize" Width="23" Click="Minimize_Click" Style="{DynamicResource ButtonBar}" Foreground="White" FontWeight="Bold" />
-        <Button Panel.ZIndex="11" Canvas.Left="390" Canvas.Top="20" Content="_" Height="23" Name="Close" Width="23" Click="Close_Click" Style="{DynamicResource ButtonBar}" Foreground="White" FontWeight="Bold" />
-        <Rectangle Panel.ZIndex="3" Canvas.Left="25" Canvas.Top="55" Width="420" Height="94" RadiusX="4" RadiusY="4" StrokeThickness="0" >
+        <Button Panel.ZIndex="11" Canvas.Left="420" Canvas.Top="30" Content="x" Height="23" Name="Minimize" Width="23" Click="Minimize_Click" Style="{DynamicResource ButtonBar}" Foreground="White" FontWeight="Bold" />
+        <Button Panel.ZIndex="11" Canvas.Left="393" Canvas.Top="30" Content="_" Height="23" Name="Close" Width="23" Click="Close_Click" Style="{DynamicResource ButtonBar}" Foreground="White" FontWeight="Bold" />
+        <Rectangle Panel.ZIndex="3" Canvas.Left="25" Canvas.Top="65" Width="420" Height="94" RadiusX="4" RadiusY="4" StrokeThickness="0" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#B2222222" Offset="0.115"/>
@@ -20,36 +20,36 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock x:Name="resultBlock" Panel.ZIndex="9" Width="391" Height="64" TextWrapping="Wrap" Canvas.Left="39" Canvas.Top="70" Foreground="White" FontSize="48" FontWeight="Bold" TextAlignment="Right"/>
-        <WrapPanel Panel.ZIndex="5" Width="420" Height="429.5" Canvas.Left="25" Canvas.Top="160">
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="C" Foreground="White" FontSize="45.333" Click="ClickC" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="±" Foreground="White" FontSize="45.333" Click="ClickNegate" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="√" Foreground="White" FontSize="45.333" Click="ClickSquareRoot" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="%" Foreground="White" FontSize="45.333" Click="ClickPercentage" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="7" Foreground="White" FontSize="45.333" Click="Click7" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="8" Foreground="White" FontSize="45.333" Click="Click8" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="9" Foreground="White" FontSize="45.333" CommandParameter="{Binding Title}" Click="Click9" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="÷" Foreground="White" FontSize="45.333" Click="ClickDivide" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="4" Foreground="White" FontSize="45.333" Click="Click4" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="5" Foreground="White" FontSize="45.333" Click="Click5" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="6" Foreground="White" FontSize="45.333" Click="Click6" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="x" Foreground="White" FontSize="45.333" Click="ClickMultiply" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="1" Foreground="White" FontSize="45.333" Click="Click1" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="2" Foreground="White" FontSize="45.333" Click="Click2" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="3" Foreground="White" FontSize="45.333" Click="Click3" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="-" Foreground="White" FontSize="45.333" Click="ClickSubstract" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="0" Foreground="White" FontSize="45.333" Click="Click0" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="." Foreground="White" FontSize="45.333" Click="ClickDot" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc2}" Content="=" Foreground="White" FontSize="45.333" x:Name="doit" Click="Solve" />
-            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="+" Foreground="White" FontSize="45.333" Click="ClickSum" />
+        <TextBlock x:Name="resultBlock" Panel.ZIndex="9" Width="391" Height="64" TextWrapping="Wrap" Canvas.Left="39" Canvas.Top="80" Foreground="White" FontSize="48" FontWeight="Bold" TextAlignment="Right" Text=""/>
+        <WrapPanel Panel.ZIndex="5" Width="420" Height="406" Canvas.Left="25" Canvas.Top="180">
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="C" Foreground="#FF909090" FontSize="45.333" Click="ClickC" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="±" Foreground="#FF909090" FontSize="45.333" Click="ClickNegate" Padding="1" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="√" Foreground="#FF909090" FontSize="45.333" Click="ClickSquareRoot" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="%" Foreground="#FF909090" FontSize="45.333" Click="ClickPercentage" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="7" Foreground="White" FontSize="45.333" Click="Click7" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="8" Foreground="White" FontSize="45.333" Click="Click8" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="9" Foreground="White" FontSize="45.333" Click="Click9" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="÷" Foreground="#FF909090" FontSize="45.333" Click="ClickDivide" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="4" Foreground="White" FontSize="45.333" Click="Click4" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="5" Foreground="White" FontSize="45.333" Click="Click5" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="6" Foreground="White" FontSize="45.333" Click="Click6" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="x" Foreground="#FF909090" FontSize="45.333" Click="ClickMultiply" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="1" Foreground="White" FontSize="45.333" Click="Click1" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="2" Foreground="White" FontSize="45.333" Click="Click2" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="3" Foreground="White" FontSize="45.333" Click="Click3" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="-" Foreground="#FF909090" FontSize="45.333" Click="ClickSubstract" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="0" Foreground="White" FontSize="45.333" Click="Click0" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="." Foreground="#FF909090" FontSize="45.333" Click="ClickDot" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc2}" Content="=" Foreground="White" FontSize="45.333" x:Name="doit" Click="Solve" FontWeight="Bold" />
+            <Button Margin="9,9,5,5" Style="{DynamicResource ButtonCalc}" Content="+" Foreground="#FF909090" FontSize="45.333" Click="ClickSum" />
         </WrapPanel>
-        <Label Panel.ZIndex="6" Width="64" Height="37" Content="TAS" Canvas.Left="21" Canvas.Top="15" FontWeight="Bold" Foreground="#FF939393" FontSize="22" FontFamily="Segoe UI"/>
-        <Rectangle Panel.ZIndex="4" Canvas.Left="5" Canvas.Top="10" Height="607" Name="TitleBar" Width="460" MouseDown="TitleBar_MouseDown" Fill="#29D1D1BE">
+        <Label Panel.ZIndex="6" Width="64" Height="37" Content="TAS" Canvas.Left="21" Canvas.Top="25" FontWeight="Bold" Foreground="#FF939393" FontSize="22" FontFamily="Segoe UI"/>
+        <Rectangle Panel.ZIndex="4" Canvas.Left="5" Canvas.Top="10" Height="607" Name="TitleBar" Width="460" MouseDown="TitleBar_MouseDown" Fill="#40D1D1BE">
             <Rectangle.Stroke>
                 <SolidColorBrush />
             </Rectangle.Stroke>
         </Rectangle>
-        <Label Canvas.Left="63" Canvas.Top="15" Content="CALC" FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" Foreground="#FF40A5D1" Height="37" Panel.ZIndex="6" Width="83" />
+        <Label Canvas.Left="63" Canvas.Top="25" Content="CALC" FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" Foreground="#FF40A5D1" Height="37" Panel.ZIndex="6" Width="83" />
     </Canvas>
     <Window.Background>
         <SolidColorBrush />
